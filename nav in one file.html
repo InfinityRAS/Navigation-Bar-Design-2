@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>NavBar</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+
+        nav {
+            background: #4b00ff;
+            height: 61px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            font-family: "PT Sans", sans-serif;
+            -webkit-transition: height 0.5s ease;
+            transition: height 0.5s ease;
+        }
+
+        nav #logo {
+            margin-left: 10px;
+            height: 87%;
+            border: 2px solid white;
+            border-radius: 33px;
+            cursor: pointer;
+            height: 47px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        nav #logo:hover {
+            -webkit-filter: brightness(80%);
+            filter: brightness(80%);
+        }
+
+        nav .hamburger {
+            display: none;
+            margin-right: 14px;
+            -webkit-filter: invert(1);
+            filter: invert(1);
+            height: 50px;
+            cursor: pointer;
+        }
+
+        nav .hamburger:hover {
+            -webkit-filter: invert(80%);
+            filter: invert(80%);
+        }
+
+        nav .hamburger:active {
+            -webkit-filter: invert(70%);
+            filter: invert(70%);
+        }
+
+        nav .nav-ul {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin: 0px 20px;
+            width: 100%;
+            height: 47px;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        nav .nav-li {
+            list-style: none;
+            cursor: pointer;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            height: 100%;
+            margin: 0px 16px;
+            padding: 0 35px;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            font-size: 22px;
+            border-radius: 5px;
+        }
+
+        nav .nav-li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav .nav-li:hover {
+            background-color: white;
+        }
+
+        nav .nav-li:hover a {
+            color: #4b00ff;
+        }
+
+        nav .nav-li:active {
+            -webkit-filter: brightness(80%);
+            filter: brightness(80%);
+        }
+
+        .nav-ul.show-ul {
+            display: -webkit-box !important;
+            display: -ms-flexbox !important;
+            display: flex !important;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+
+        .nav-ul.show-ul .nav-li {
+            padding: 5px 35px;
+        }
+
+        @media screen and (max-width: 816px) {
+            nav {
+                -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+                -webkit-box-align: baseline;
+                -ms-flex-align: baseline;
+                align-items: baseline;
+                height: auto;
+            }
+
+            nav .hamburger {
+                display: block !important;
+            }
+
+            nav .nav-ul {
+                display: none !important;
+                height: -webkit-fit-content;
+                height: -moz-fit-content;
+                height: fit-content;
+            }
+        }
+
+        #context-menu {
+            font-family: "Open Sans", sans-serif;
+            position: fixed;
+            z-index: 10000;
+            width: 150px;
+            background: #1b1a1a;
+            border-radius: 5px;
+            transform: scale(0);
+            transform-origin: top left;
+        }
+
+        #context-menu.active {
+            transform: scale(1);
+            transition: transform 300ms ease-in-out;
+        }
+
+        #context-menu .item {
+            padding: 8px 10px;
+            font-size: 15px;
+            color: #eee;
+        }
+
+        #context-menu .item:hover {
+            background: #555;
+        }
+
+        #context-menu .item i {
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        #context-menu hr {
+            margin: 2px 0px;
+            border-color: #555;
+        }
+
+        /*# sourceMappingURL=style.css.map */
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="https://lh3.google.com/u/0/d/18kQLAzU8NHbR2NyvmD_c4HMtm6o1Iojw=w1366-h667-iv1" alt="AAO" id="logo">
+
+        <ul class="nav-ul">
+            <li class="nav-li"><a href="#">Home</a></li>
+            <li class="nav-li"><a href="#">About</a></li>
+            <li class="nav-li"><a href="#">Contact Us</a></li>
+            <li class="nav-li"><a href="#">Services</a></li>
+        </ul>
+        <!-- <img src="./SVG/hamburger.svg" alt="Hamburger" id="hamburger" class="hamburger"> -->
+        <!-- <span class="material-icons-outlined hamburger" id="hamburger">
+            menu
+        </span> -->
+        <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 0 24 24" width="50px" fill="#000000" id="hamburger" class="hamburger"><path d="M0 0h24v24H0V0z" fill="none" /><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+
+    </nav>
+
+    <div id="context-menu">
+        <div class="item">
+            <i class="fa fa-cut"></i> Cut
+        </div>
+        <div class="item">
+            <i class="fa fa-clone"></i> Copy
+        </div>
+        <div class="item">
+            <i class="fa fa-paste"></i> Paste
+        </div>
+        <div class="item">
+            <i class="fa fa-trash-o"></i> Delete
+        </div>
+        <hr>
+        <div class="item">
+            <i class="fa fa-refresh"></i> Reload
+        </div>
+        <div class="item">
+            <i class="fa fa-times"></i> Exit
+        </div>
+    </div>
+
+    <script>
+        const navUl = document.querySelector(".nav-ul");
+        const hamburger = document.getElementById("hamburger");
+
+        hamburger.addEventListener("click", () => {
+            navUl.classList.toggle("show-ul");
+        });
+
+
+        window.addEventListener("contextmenu", function (event) {
+            event.preventDefault();
+            var contextElement = document.getElementById("context-menu");
+            contextElement.style.top = event.offsetY + "px";
+            contextElement.style.left = event.offsetX + "px";
+            contextElement.classList.add("active");
+        });
+        window.addEventListener("click", function () {
+            document.getElementById("context-menu").classList.remove("active");
+        });
+    </script>
+</body>
+
+</html>
